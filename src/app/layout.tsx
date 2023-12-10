@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="h-screen overflow-clip">
+        <div className="md:h-screen md:overflow-scroll">
           <Navbar />
           {children}
         </div>

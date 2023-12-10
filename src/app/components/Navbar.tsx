@@ -7,11 +7,11 @@ const Navbar = () => {
   const pathName = usePathname();
 
   return (
-    <div className="h-14 w-full bg-slate-50 flex justify-between">
+    <div className="h-14 w-full bg-teal-blue-950 flex justify-between sticky top-0 backdrop-blur-3xl">
       <h1 className="mx-4 p-2 h-fit uppercase font-extrabold rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-red-300 to-green-500 shadow-lg">
         JB
       </h1>
-      <div className=" mx-4 flex gap-4 text-black">
+      <div className=" mx-4 gap-4 text-black md:flex hidden">
         <button
           className={
             pathName.includes("home")
