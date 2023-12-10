@@ -1,17 +1,39 @@
 "use client";
-import React, { useRef, useState, useEffect, Suspense } from "react";
+import React, { useRef } from "react";
+import { Canvas, useThree, useFrame } from "react-three-fiber";
+import { useGLTF, OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
-import { Canvas } from "react-three-fiber";
-import { useGLTF } from "@react-three/drei";
 
-export function Model(props: {
+const CameraControls: React.FC = () => {
+  const { camera, gl } = useThree();
+
+  return (
+    <OrbitControls
+      args={[camera, gl.domElement]}
+      enableZoom={false}
+      autoRotate
+      enableRotate={false}
+    />
+  );
+};
+
+interface ModelProps {
   groupProps?: JSX.IntrinsicElements["group"];
   url: string;
-}) {
-  const { nodes, materials } = useGLTF(props.url);
-  console.log("Nodes", JSON.stringify(nodes));
-  console.log("materials", materials);
+}
+
+export const Model: React.FC<ModelProps> = (props) => {
+  const { nodes, materials } = useGLTF(props.url) as unknown as {
+    nodes: {
+      [key: string]: {
+        geometry: THREE.BufferGeometry;
+      };
+    };
+    materials: any; // Adjust this to match your actual material types
+  };
+
   useGLTF.preload(props.url);
+
   return (
     <group {...props.groupProps}>
       <mesh
@@ -139,16 +161,16 @@ export function Model(props: {
       />
     </group>
   );
-}
+};
 
-const page = () => {
+const Page = () => {
   return (
     <section className="w-full h-screen relative">
       <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center"></div>
 
       <Canvas
         className={`w-full h-screen bg-transparent`}
-        camera={{ near: 1, far: 2000, position: [0, 1, 400] }}
+        camera={{ near: 1, far: 1000, position: [0, 100, 200] }}
       >
         <directionalLight position={[1, 1, 1]} intensity={2} />
         <ambientLight intensity={0.5} />
@@ -159,16 +181,13 @@ const page = () => {
           penumbra={1}
           intensity={2}
         />
-        <hemisphereLight
-          skyColor="#b1e1ff"
-          groundColor="#000000"
-          intensity={1}
-        />
+        <hemisphereLight groundColor="#000000" intensity={1} />
 
+        <CameraControls />
         <Model url={"volcano_island_lowpoly.glb"} />
       </Canvas>
     </section>
   );
 };
 
-export default page;
+export default Page;
