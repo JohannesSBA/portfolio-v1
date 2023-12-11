@@ -1,8 +1,10 @@
 "use client";
-import React, { useRef } from "react";
+import React, { Suspense, useRef } from "react";
 import { Canvas, useThree, useFrame } from "react-three-fiber";
 import { useGLTF, OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
+import Loader from "../components/Loader";
+import { Section } from "../components/Section";
 
 const CameraControls: React.FC = () => {
   const { camera, gl } = useThree();
@@ -164,27 +166,54 @@ export const Model: React.FC<ModelProps> = (props) => {
 };
 
 const Page = () => {
+  const modelRef = useRef<any>(null);
+
+  const handleButtonClick = () => {
+    // Trigger the animation by setting the state to true
+    if (modelRef.current) {
+      modelRef.current.setAnimating(true);
+    }
+  };
+
+  const handleModelReachedFixedPoint = () => {
+    // Change the page or perform any other action
+    console.log("Model reached the fixed point. Changing the page...");
+  };
+
   return (
     <section className="w-full h-screen relative">
-      <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center"></div>
+      <Section delay={1}>
+        <div className="absolute top-24 left-0 right-0 z-10 flex items-center justify-center">
+          <h1 className="sm:text-xl sm:leading-snug text-center bg-blue-400 py-4 px-8 text-white mx-5 rounded-lg">
+            Hi, I am
+            <span className="font-semibold mx-2 text-white">
+              Johannes Bekele
+            </span>
+            👋
+            <br />A Software Engineer from Ethiopia 🇪🇹
+          </h1>
+        </div>
+      </Section>
 
       <Canvas
-        className={`w-full h-screen bg-transparent`}
-        camera={{ near: 1, far: 1000, position: [0, 100, 200] }}
+        className={`w-full h-screen bg-blue-400 bg-opacity-30`}
+        camera={{ near: 1, far: 1000, position: [100, 100, 100] }}
       >
-        <directionalLight position={[1, 1, 1]} intensity={2} />
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 5, 10]} intensity={2} />
-        <spotLight
-          position={[0, 50, 10]}
-          angle={0.15}
-          penumbra={1}
-          intensity={2}
-        />
-        <hemisphereLight groundColor="#000000" intensity={1} />
+        <Suspense fallback={<Loader />}>
+          <directionalLight position={[1, 1, 1]} intensity={2} />
+          <ambientLight intensity={0.5} />
+          <pointLight position={[10, 5, 10]} intensity={2} />
+          <spotLight
+            position={[0, 50, 10]}
+            angle={0.15}
+            penumbra={1}
+            intensity={2}
+          />
+          <hemisphereLight groundColor="#000000" intensity={1} />
 
-        <CameraControls />
-        <Model url={"volcano_island_lowpoly.glb"} />
+          <CameraControls />
+          <Model url={"volcano_island_lowpoly.glb"} />
+        </Suspense>
       </Canvas>
     </section>
   );

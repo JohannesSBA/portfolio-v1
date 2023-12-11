@@ -3,7 +3,7 @@ import ExperienceItem from "../components/ExperienceItem";
 
 const page = () => {
   return (
-    <div className="w-screen bg-teal-blue-950 bg-opacity-30 flex flex-col justify-center items-center overflow-scroll">
+    <div className="w-screen bg-teal-blue-950 bg-opacity-30 flex flex-col justify-center items-center overflow-scroll mt-12">
       <h1 className="text-2xl font-extrabold uppercase my-8">
         Work Experiences
       </h1>

@@ -6,8 +6,8 @@ import { IconContext } from "react-icons";
 
 const page = () => {
   return (
-    <div className="md:h-screen w-screen flex flex-col overflow-clip md:flex-row gap-12 items-center bg-teal-blue-950 bg-opacity-30">
-      <div className="w-screen md:w-1/2 ml-12 md:ml-24 h-full overflow-clip">
+    <div className="md:h-screen w-screen flex flex-col overflow-clip md:flex-row gap-12 items-center bg-teal-blue-950 bg-opacity-30 ">
+      <div className="w-screen md:w-1/2 ml-12 md:ml-24 h-full md:mt-12 overflow-clip">
         <div className="flex flex-col gap-4 md:h-1/2 mt-20">
           <h1 className="font-extrabold text-4xl md:text-6xl text-slate-200 glow:text-black">
             Johannes Bekele
