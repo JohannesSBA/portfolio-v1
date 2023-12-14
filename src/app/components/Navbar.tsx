@@ -21,11 +21,11 @@ const Navbar = () => {
         >
           JB
         </h1>
-        <div className=" mx-4 gap-4 text-black md:flex hidden transition-all">
+        <div className="mx-4 gap-4 text-black md:flex hidden transition-all">
           <button
             className={
               pathName.includes("projects")
-                ? "bg-gradient-to-r from-red-300 to-green-500 h-fit p-2 mt-2 rounded-xl text-white"
+                ? "bg-gradient-to-r ring-2 h-fit p-2 mt-2 rounded-xl text-white"
                 : "bg-transparent shadow-lg text-white"
             }
             onClick={() => {
@@ -39,7 +39,7 @@ const Navbar = () => {
           <button
             className={
               pathName.includes("experience")
-                ? "bg-gradient-to-r from-red-300 to-green-500 h-fit p-2 mt-2 rounded-xl text-white"
+                ? "bg-gradient-to-r ring-2 h-fit p-2 mt-2 rounded-xl text-white"
                 : "bg-transparent shadow-lg text-white"
             }
             onClick={() => {
@@ -53,7 +53,7 @@ const Navbar = () => {
           <button
             className={
               pathName.includes("about")
-                ? "bg-gradient-to-r from-red-300 to-green-500 h-fit p-2 mt-2 rounded-xl text-white"
+                ? "bg-gradient-to-r ring-2 h-fit p-2 mt-2 rounded-xl text-white"
                 : "bg-transparent shadow-lg text-white"
             }
             onClick={() => {
@@ -67,7 +67,7 @@ const Navbar = () => {
           <button
             className={
               pathName.includes("contact")
-                ? "bg-gradient-to-r from-red-300 to-green-500 h-fit p-2 mt-2 rounded-xl text-white"
+                ? "bg-gradient-to-r ring-2 h-fit p-2 mt-2 rounded-xl text-white"
                 : "bg-transparent shadow-lg text-white"
             }
             onClick={() => {

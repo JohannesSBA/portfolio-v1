@@ -12,6 +12,7 @@
     "@codaworks/react-glow": "^1.0.4",
     "@react-three/drei": "^9.90.2",
     "@react-three/fiber": "^8.15.12",
+    "axios": "^1.6.2",
     "framer-motion": "^10.16.16",
     "next": "14.0.3",
     "react": "^18",

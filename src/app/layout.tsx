@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import { IconContext } from "react-icons/lib/esm/iconContext";
+import MobileNavBar from "./components/MobileNavBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="md:h-screen md:overflow-scroll bg-teal-blue-950 bg-opacity-30">
-          <Navbar />
+          <div className="hidden md:flex">
+            <Navbar />
+          </div>
+          <div className="flex md:hidden">
+            <MobileNavBar />
+          </div>
+
           {children}
         </div>
       </body>
