@@ -24,7 +24,7 @@ interface ModelProps {
   url: string;
 }
 
-export const Model: React.FC<ModelProps> = (props) => {
+const Model: React.FC<ModelProps> = (props) => {
   const { nodes, materials } = useGLTF(props.url) as unknown as {
     nodes: {
       [key: string]: {
