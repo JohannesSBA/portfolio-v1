@@ -53,7 +53,7 @@ const page = () => {
           desc={
             "Econnect is a employment-focused social media platform that works through websites and mobile apps. The platform is primarily ment for professional networking and career development, and allows jobseekers to post their apply for jobs and employers to post jobs."
           }
-          image={`/bunaChai.png`}
+          image={`/econnect.png`}
           link="https://github.com/JohannesSBA/econnect-dev"
           tags={[
             "Nextjs",

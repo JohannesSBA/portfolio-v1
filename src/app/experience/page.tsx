@@ -4,7 +4,7 @@ import ExperienceItem from "../components/ExperienceItem";
 const page = () => {
   return (
     <div className="w-screen bg-teal-blue-950 bg-opacity-30 flex flex-col justify-center items-center overflow-scroll mt-12">
-      <h1 className="text-2xl font-extrabold uppercase my-8">
+      <h1 className="text-2xl font-extrabold uppercase my-12">
         Work Experiences
       </h1>
       <div className="flex flex-col gap-4 overflow-scroll">
