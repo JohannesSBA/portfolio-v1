@@ -26,7 +26,7 @@ const Navbar = () => {
             className={
               pathName.includes("projects")
                 ? "bg-gradient-to-r ring-2 h-fit p-2 mt-2 rounded-xl text-white"
-                : "bg-transparent shadow-lg text-white"
+                : "bg-transparent rounded-lg p-2 shadow-lg text-white"
             }
             onClick={() => {
               if (!pathName.includes("projects")) {
@@ -40,7 +40,7 @@ const Navbar = () => {
             className={
               pathName.includes("experience")
                 ? "bg-gradient-to-r ring-2 h-fit p-2 mt-2 rounded-xl text-white"
-                : "bg-transparent shadow-lg text-white"
+                : "bg-transparent rounded-lg p-2 shadow-lg text-white"
             }
             onClick={() => {
               if (!pathName.includes("experience")) {
@@ -54,7 +54,7 @@ const Navbar = () => {
             className={
               pathName.includes("about")
                 ? "bg-gradient-to-r ring-2 h-fit p-2 mt-2 rounded-xl text-white"
-                : "bg-transparent shadow-lg text-white"
+                : "bg-transparent rounded-lg p-2 shadow-lg text-white"
             }
             onClick={() => {
               if (!pathName.includes("about")) {
@@ -68,7 +68,7 @@ const Navbar = () => {
             className={
               pathName.includes("contact")
                 ? "bg-gradient-to-r ring-2 h-fit p-2 mt-2 rounded-xl text-white"
-                : "bg-transparent shadow-lg text-white"
+                : "bg-transparent rounded-lg p-2 shadow-lg text-white"
             }
             onClick={() => {
               if (!pathName.includes("contact")) {

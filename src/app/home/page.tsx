@@ -181,7 +181,7 @@ const Page = () => {
   };
 
   return (
-    <section className="w-full h-screen relative">
+    <section className="w-full h-screen relative bg-teal-blue-950">
       <Section delay={1}>
         <div className="absolute top-24 left-0 right-0 z-10 flex items-center justify-center">
           <h1 className="sm:text-xl sm:leading-snug text-center bg-blue-400 py-4 px-8 text-white mx-5 rounded-lg">
